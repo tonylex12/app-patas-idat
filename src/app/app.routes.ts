@@ -10,4 +10,6 @@ export const routes: Routes = [
     component: DashboardComponent,
     children: [{ path: 'home', component: HomeComponent }],
   },
+
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
