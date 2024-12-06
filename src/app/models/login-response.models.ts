@@ -7,6 +7,6 @@ export interface LoginResponse {
   celular: string;
   usuario: string;
   password: string;
-  esVoluntario: boolean;
+  esVoluntario: string;
   mensaje: string;
 }

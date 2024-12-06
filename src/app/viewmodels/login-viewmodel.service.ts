@@ -11,9 +11,7 @@ export class LoginViewmodelService {
   constructor(private http: HttpClient) {}
 
   login(usuario: string, password: string): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(this.apiUrl, {
-      usuario,
-      password,
-    });
+    const payload = { usuario, password };
+    return this.http.post<LoginResponse>(this.apiUrl, payload);
   }
 }
