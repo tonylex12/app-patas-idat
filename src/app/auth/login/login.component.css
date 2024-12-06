@@ -6,7 +6,10 @@
   height: 100%;
 }
 
-.mat-content form {
+.mat-content form,
+mat-card-actions,
+mat-card-footer,
+mat-card-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,4 +18,10 @@
 
 .mat-title {
   margin-bottom: 16px;
+  text-align: center;
+}
+
+.message {
+  padding: 8px;
+  text-align: center;
 }
