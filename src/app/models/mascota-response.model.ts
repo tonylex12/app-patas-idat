@@ -1,5 +1,5 @@
 export interface MascotaResponse {
-  nomascota: string;
+  nommascota: string;
   fechaperdida: string;
   urlimagen: string;
   lugar: string;
