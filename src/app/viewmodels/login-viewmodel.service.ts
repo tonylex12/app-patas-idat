@@ -18,10 +18,19 @@ export class LoginViewmodelService {
 
   login(usuario: string, password: string): Observable<LoginResponse> {
     const payload = { usuario, password };
+    sessionStorage.setItem('login', 'true');
     return this.http.post<LoginResponse>(this.apiUrl, payload);
   }
 
   setLoginState(isLoggedIn: boolean) {
     this.loginStateSubject.next(isLoggedIn);
+  }
+
+  logout() {
+    sessionStorage.clear();
+  }
+
+  isLogin(): boolean {
+    return !!sessionStorage.getItem('login');
   }
 }

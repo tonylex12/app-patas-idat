@@ -6,16 +6,10 @@ import { inject } from '@angular/core';
 export const authGuard: CanActivateFn = (route, state) => {
   const loginViewModel = inject(LoginViewmodelService);
   const router = inject(Router);
-
-  // loginViewModel.loginState$.pipe(
-  //   map((isLoggedIn: boolean) => {
-  //     if (isLoggedIn) {
-  //       return true;
-  //     } else {
-  //       router.navigate(['login']);
-  //       return false;
-  //     }
-  //   })
-  // );
-  return true;
+  const valorSessionStorage = loginViewModel.isLogin();
+  if (!!valorSessionStorage) {
+    return true;
+  }
+  router.navigate(['login'], { queryParams: { blockedPage: state.url } });
+  return false;
 };
