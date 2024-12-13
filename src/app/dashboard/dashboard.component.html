@@ -1,3 +1,25 @@
-<p>dashboard works!</p>
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>App IDAT</span>
+  <button mat-button (click)="goHome()">Home</button>
+  <!-- <button mat-button (click)="goCurso()">Curso</button>
+  <button mat-button (click)="goAlumno()">Alumno</button> -->
+
+  <!-- <span class="example-spacer"></span>
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with share icon"
+    (click)="logout()"
+  >
+    <mat-icon>power_settings_new</mat-icon>
+  </button> -->
+</mat-toolbar>
 
 <router-outlet></router-outlet>

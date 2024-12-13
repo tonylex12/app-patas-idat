@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { MaterialModule } from '../material/material/material.module';
 
 @Component({
@@ -9,4 +9,10 @@ import { MaterialModule } from '../material/material/material.module';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
-export class DashboardComponent {}
+export class DashboardComponent {
+  constructor(private router: Router, private route: ActivatedRoute) {}
+
+  goHome() {
+    this.router.navigate(['home'], { relativeTo: this.route });
+  }
+}
