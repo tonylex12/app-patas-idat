@@ -24,7 +24,11 @@ export class LoginComponent {
   onLogin() {
     this.LoginViewmodel.login(this.usuario, this.password).subscribe({
       next: (response) => {
-        console.log(response);
+        // console.log(response);
+        if (response.rpta) {
+          this.router.navigate(['dashboard']);
+        }
+        this.mensaje = response.mensaje;
       },
       error: (error) => {
         this.mensaje = 'El usuario o la contraseña son incorrectos';

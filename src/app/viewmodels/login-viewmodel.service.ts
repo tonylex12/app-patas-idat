@@ -12,7 +12,7 @@ export class LoginViewmodelService {
 
   constructor(private http: HttpClient) {}
 
-  get loginState(): Observable<boolean> {
+  get loginState$(): Observable<boolean> {
     return this.loginStateSubject.asObservable();
   }
 
